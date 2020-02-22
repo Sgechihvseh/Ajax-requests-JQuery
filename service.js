@@ -1,5 +1,7 @@
 function getImages(pageNumber) {
-	const promise = $.ajax(`https://repetitora.net/api/JS/Images?page=${pageNumber}&count=1`)
+	const promise = axios.get(`https://repetitora.net/api/JS/Images?page=${pageNumber}&count=1`)
 
-	return promise;
+	return promise.then((data) => {
+		return data.data;
+	});
 }
